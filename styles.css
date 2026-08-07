@@ -403,8 +403,6 @@ body.scrolled nav {
 .content.player::after {
     display: none;
 }
-}
-.content.player:hover::after { transform: translateX(120%); }
 .content.player:focus-within {
     border-color: var(--accent);
     box-shadow: var(--shadow-lg), var(--shadow-glow);
