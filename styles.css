@@ -4,8 +4,19 @@
    ========================================================================= */
 
 @font-face {
-    font-family: pike;
-    src: url(fonts/Turnpike.ttf);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZJhiJ-Ek-_FP9V.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZJhiJ-Ek-_FP9V.woff2') format('woff2');
+    font-display: swap;
 }
 
 /* ---------- Tokens ---------- */
@@ -31,10 +42,10 @@
     --radius-lg: 20px;
 
     /* Shadow */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
-    --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.55);
-    --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.7);
-    --shadow-glow: 0 0 40px var(--accent-soft);
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-glow: none;
 
     /* Motion */
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -45,8 +56,11 @@
     --dur-slow: 420ms;
 
     /* Typography */
-    --font-display: "pike", serif;
-    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-display: "Inter", sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
 
     /* Cursor */
     --cursor-size: 10px;
