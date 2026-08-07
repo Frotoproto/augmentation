@@ -41,13 +41,19 @@ html {
     color: var(--color-text-primary);
 }
 
+body {
+    font-family: var(--font-family);
+    background: var(--color-bg);
     color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: auto;
 }
 
-/* Minimalist cursor */
-body { cursor: auto; }
-.cursor { display: none; }
-body { cursor: auto; }
 .cursor { display: none; }
 
 /* ---------- Nav ---------- */
