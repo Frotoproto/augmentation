@@ -20,6 +20,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZJhiJ-Ek-_FP9V.woff2') format('woff2');
+    font-display: swap;
+}
+
 /* ---------- Reset ---------- */
 *,
 *::before,
