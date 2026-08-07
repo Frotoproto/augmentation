@@ -41,17 +41,12 @@ html {
     color: var(--color-text-primary);
 }
 
-body {
-    font-family: var(--font-family);
-    background: var(--color-bg);
     color: var(--color-text-primary);
-/* Minimalist cursor */
-body { cursor: auto; }
-.cursor { display: none; }
-body { cursor: auto; }
-.cursor { display: none; }
+}
 
 /* Minimalist cursor */
+body { cursor: auto; }
+.cursor { display: none; }
 body { cursor: auto; }
 .cursor { display: none; }
 
