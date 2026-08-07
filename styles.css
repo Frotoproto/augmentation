@@ -400,19 +400,9 @@ body.scrolled nav {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(115deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.08) 50%,
-        transparent 70%);
-    transform: translateX(-120%);
-    transition: transform 900ms var(--ease-out);
-    pointer-events: none;
-    z-index: 3;
+.content.player::after {
+    display: none;
 }
-.content.player:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: var(--shadow-lg), var(--shadow-glow);
-    border-color: var(--border-strong);
 }
 .content.player:hover::after { transform: translateX(120%); }
 .content.player:focus-within {
