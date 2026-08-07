@@ -45,13 +45,14 @@ body {
     font-family: var(--font-family);
     background: var(--color-bg);
     color: var(--color-text-primary);
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-/* Minimalist cursor */
-.cursor { display: none; }
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* Minimalist cursor */
+body { cursor: auto; }
+.cursor { display: none; }
 
 /* Minimalist cursor */
 body { cursor: auto; }
