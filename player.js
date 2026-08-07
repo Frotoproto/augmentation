@@ -104,17 +104,20 @@
             });
             this.video.addEventListener('play', () => {
                 this.onPlayStart();
+                this.updateBigPlayLabel();
                 emit('player:play', { id: this.id });
                 emit('timeline:active', { id: this.id });
             });
             this.video.addEventListener('pause', () => {
                 this.bigPlay.hidden = false;
                 this.btnPlay.classList.remove('is-playing');
+                this.updateBigPlayLabel();
                 emit('player:pause', { id: this.id, currentTime: this.video.currentTime });
             });
             this.video.addEventListener('ended', () => {
                 this.bigPlay.hidden = false;
                 this.btnPlay.classList.remove('is-playing');
+                this.updateBigPlayLabel();
                 emit('player:ended', { id: this.id });
             });
             this.video.addEventListener('timeupdate', () => this.onTimeUpdate());
