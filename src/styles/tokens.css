@@ -5,11 +5,11 @@
   --font-weight-body: 300;
 
   /* Colors - Premium Minimalist Palette */
-  --color-bg: #ffffff;
-  --color-text-primary: #0a0a0a;
-  --color-text-secondary: #666666;
-  --color-accent: #000000;
-  --color-border: #e0e0e0;
+  --color-bg: #0a0a0a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0a0;
+  --color-accent: #ffffff;
+  --color-border: #333333;
 
   /* Transitions */
   --transition-standard: opacity 0.2s ease, border-color 0.2s ease;
