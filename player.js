@@ -209,6 +209,12 @@
         applyMuteIcon() {
             this.btnMute.classList.toggle('is-muted', this.muted);
             this.btnMute.setAttribute('aria-label', this.muted ? 'Unmute' : 'Mute');
+            this.btnMute.setAttribute('aria-pressed', this.muted ? 'true' : 'false');
+        }
+
+        updateBigPlayLabel() {
+            const playing = !this.video.paused;
+            this.bigPlay.setAttribute('aria-label', playing ? 'Pause' : 'Play');
         }
 
         toggleFullscreen() {
