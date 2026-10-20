@@ -1,98 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Timeline</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Augmentation Films — a chronological archive of short films.">
+  <title>Augmentation Films — Archive</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="player.js" defer></script>
+  <script src="timeline.js" defer></script>
 </head>
 <body>
-    
-    <div class="cursor"></div>
+  <a class="skip-link" href="#archive">Skip to films</a>
 
-<nav>
-    <h1 onclick="window.location.href='home1.html';" style="cursor: pointer;">Augmentation Films</h1>
-</nav>
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" aria-label="Augmentation Films — back to top">AUGMENTATION</a>
+    <p class="header-note">Film archive <span aria-hidden="true">/</span> 2023—2024</p>
+    <a class="header-jump" href="#archive">Browse archive <span aria-hidden="true">↓</span></a>
+  </header>
 
-<div class="timeline">
-    <div class="container right">
-        <div class="title">Chase, March 11th, 2023</div>
-        <div class="content">
-            <video controls>
-                <source src="march11-23.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="title">Skateboard, May 13th, 2024</div>
-        <div class="content">
-            <video controls>
-                <source src="may13-24.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="title">Boo-Edit, July 20, 2024</div>
-        <div class="content">
-            <video controls>
-                <source src="jul20-24.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="title">Boothama Anthem, August 7, 2024</div>
-        <div class="content">
-            <video controls>
-                <source src="aug7-24.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="title">BooraBoora, August 10, 2024</div>
-        <div class="content">
-            <video controls>
-                <source src="Aug10-24.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="title">BooMasala, August 18, 20 24</div>
-        <div class="content">
-            <video controls>
-                <source src="Aug18-24.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-    <div class="container right">
-        <div class="title">Fart of the century trailer, Sep 2, 2024</div>
-        <div class="content">
-            <video controls>
-                <source src="railer (1).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-</div>
+  <main id="archive">
+    <section class="intro" aria-labelledby="archive-title">
+      <p class="eyebrow">Independent shorts, in sequence</p>
+      <h1 id="archive-title">The films<br>we made.</h1>
+      <div class="intro-copy">
+        <p>A living timeline of the chases, edits, experiments, and inside jokes that made it out of the group chat.</p>
+        <p class="entry-count">07 films <span aria-hidden="true">—</span> 18 months</p>
+      </div>
+    </section>
 
-<script>
-    // Add a class to the body when scrolling
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY > 0;
-        document.body.classList.toggle('scrolled', scrolled);
-    });
-    
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', e => {
-        cursor.setAttribute("style", "top: " + (e.pageY - 100) + "px; left: " + (e.pageX - 100) + "px;");
-    });
-  
-</script>
+    <section class="archive" data-timeline-root aria-label="Film archive timeline">
+      <div class="timeline-rail" aria-hidden="true">
+        <p>Timeline</p>
+        <div class="timeline__spine" data-timeline>
+          <div class="timeline__fill" data-timeline-fill></div>
+        </div>
+        <p>2024</p>
+      </div>
 
+      <div class="film-list">
+        <article class="film-entry" data-timeline-item id="march-11-23">
+          <header class="film-meta">
+            <time datetime="2023-03-11">11 MAR 2023</time>
+            <h2 class="title">Chase</h2>
+            <p>001 / 007</p>
+          </header>
+          <div class="content player" data-player data-player-id="march-11-23" tabindex="0">
+            <video class="player__video" preload="metadata" playsinline poster="">
+              <source src="march11-23.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="player__fallback" aria-hidden="true"><span>CHASE</span><small>11 MAR 2023</small></div>
+            <button class="player__big-play" data-player-action="toggle" aria-label="Play Chase"><span class="play-triangle" aria-hidden="true"></span><span>Play film</span></button>
+            <div class="player__chrome" data-player-chrome hidden>
+              <button class="player__btn player__play" data-player-action="toggle" aria-label="Play or pause"><span aria-hidden="true"></span></button>
+              <div class="player__time"><span data-player-time="current">0:00</span><span class="player__time-sep"> / </span><span data-player-time="duration">0:00</span></div>
+              <div class="player__scrubber" role="slider" data-player-scrubber tabindex="0" aria-label="Seek Chase" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player__scrubber-buffer" data-player-buffer></div><div class="player__scrubber-fill" data-player-fill></div><div class="player__scrubber-thumb" data-player-thumb></div><span class="player__tooltip" data-player-tooltip hidden>0:00</span></div>
+              <button class="player__btn player__mute" data-player-action="mute" aria-label="Mute"><span aria-hidden="true"></span></button>
+              <button class="player__btn player__fs" data-player-action="fullscreen" aria-label="Fullscreen"><span aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-entry" data-timeline-item id="may-13-24">
+          <header class="film-meta"><time datetime="2024-05-13">13 MAY 2024</time><h2 class="title">Skateboard</h2><p>002 / 007</p></header>
+          <div class="content player" data-player data-player-id="may-13-24" tabindex="0"><video class="player__video" preload="metadata" playsinline><source src="may13-24.mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="player__fallback" aria-hidden="true"><span>SKATEBOARD</span><small>13 MAY 2024</small></div><button class="player__big-play" data-player-action="toggle" aria-label="Play Skateboard"><span class="play-triangle" aria-hidden="true"></span><span>Play film</span></button><div class="player__chrome" data-player-chrome hidden><button class="player__btn player__play" data-player-action="toggle" aria-label="Play or pause"><span aria-hidden="true"></span></button><div class="player__time"><span data-player-time="current">0:00</span><span class="player__time-sep"> / </span><span data-player-time="duration">0:00</span></div><div class="player__scrubber" role="slider" data-player-scrubber tabindex="0" aria-label="Seek Skateboard" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player__scrubber-buffer" data-player-buffer></div><div class="player__scrubber-fill" data-player-fill></div><div class="player__scrubber-thumb" data-player-thumb></div><span class="player__tooltip" data-player-tooltip hidden>0:00</span></div><button class="player__btn player__mute" data-player-action="mute" aria-label="Mute"><span aria-hidden="true"></span></button><button class="player__btn player__fs" data-player-action="fullscreen" aria-label="Fullscreen"><span aria-hidden="true"></span></button></div></div>
+        </article>
+
+        <article class="film-entry" data-timeline-item id="jul-20-24">
+          <header class="film-meta"><time datetime="2024-07-20">20 JUL 2024</time><h2 class="title">Boo—Edit</h2><p>003 / 007</p></header>
+          <div class="content player" data-player data-player-id="jul-20-24" tabindex="0"><video class="player__video" preload="metadata" playsinline><source src="jul20-24.mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="player__fallback" aria-hidden="true"><span>BOO—EDIT</span><small>20 JUL 2024</small></div><button class="player__big-play" data-player-action="toggle" aria-label="Play Boo Edit"><span class="play-triangle" aria-hidden="true"></span><span>Play film</span></button><div class="player__chrome" data-player-chrome hidden><button class="player__btn player__play" data-player-action="toggle" aria-label="Play or pause"><span aria-hidden="true"></span></button><div class="player__time"><span data-player-time="current">0:00</span><span class="player__time-sep"> / </span><span data-player-time="duration">0:00</span></div><div class="player__scrubber" role="slider" data-player-scrubber tabindex="0" aria-label="Seek Boo Edit" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player__scrubber-buffer" data-player-buffer></div><div class="player__scrubber-fill" data-player-fill></div><div class="player__scrubber-thumb" data-player-thumb></div><span class="player__tooltip" data-player-tooltip hidden>0:00</span></div><button class="player__btn player__mute" data-player-action="mute" aria-label="Mute"><span aria-hidden="true"></span></button><button class="player__btn player__fs" data-player-action="fullscreen" aria-label="Fullscreen"><span aria-hidden="true"></span></button></div></div>
+        </article>
+
+        <article class="film-entry" data-timeline-item id="aug-7-24">
+          <header class="film-meta"><time datetime="2024-08-07">07 AUG 2024</time><h2 class="title">Boothama Anthem</h2><p>004 / 007</p></header>
+          <div class="content player" data-player data-player-id="aug-7-24" tabindex="0"><video class="player__video" preload="metadata" playsinline><source src="aug7-24.mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="player__fallback" aria-hidden="true"><span>BOOTHAMA ANTHEM</span><small>07 AUG 2024</small></div><button class="player__big-play" data-player-action="toggle" aria-label="Play Boothama Anthem"><span class="play-triangle" aria-hidden="true"></span><span>Play film</span></button><div class="player__chrome" data-player-chrome hidden><button class="player__btn player__play" data-player-action="toggle" aria-label="Play or pause"><span aria-hidden="true"></span></button><div class="player__time"><span data-player-time="current">0:00</span><span class="player__time-sep"> / </span><span data-player-time="duration">0:00</span></div><div class="player__scrubber" role="slider" data-player-scrubber tabindex="0" aria-label="Seek Boothama Anthem" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player__scrubber-buffer" data-player-buffer></div><div class="player__scrubber-fill" data-player-fill></div><div class="player__scrubber-thumb" data-player-thumb></div><span class="player__tooltip" data-player-tooltip hidden>0:00</span></div><button class="player__btn player__mute" data-player-action="mute" aria-label="Mute"><span aria-hidden="true"></span></button><button class="player__btn player__fs" data-player-action="fullscreen" aria-label="Fullscreen"><span aria-hidden="true"></span></button></div></div>
+        </article>
+
+        <article class="film-entry" data-timeline-item id="aug-10-24">
+          <header class="film-meta"><time datetime="2024-08-10">10 AUG 2024</time><h2 class="title">BooraBoora</h2><p>005 / 007</p></header>
+          <div class="content player" data-player data-player-id="aug-10-24" tabindex="0"><video class="player__video" preload="metadata" playsinline><source src="Aug10-24.mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="player__fallback" aria-hidden="true"><span>BOORABOORA</span><small>10 AUG 2024</small></div><button class="player__big-play" data-player-action="toggle" aria-label="Play BooraBoora"><span class="play-triangle" aria-hidden="true"></span><span>Play film</span></button><div class="player__chrome" data-player-chrome hidden><button class="player__btn player__play" data-player-action="toggle" aria-label="Play or pause"><span aria-hidden="true"></span></button><div class="player__time"><span data-player-time="current">0:00</span><span class="player__time-sep"> / </span><span data-player-time="duration">0:00</span></div><div class="player__scrubber" role="slider" data-player-scrubber tabindex="0" aria-label="Seek BooraBoora" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player__scrubber-buffer" data-player-buffer></div><div class="player__scrubber-fill" data-player-fill></div><div class="player__scrubber-thumb" data-player-thumb></div><span class="player__tooltip" data-player-tooltip hidden>0:00</span></div><button class="player__btn player__mute" data-player-action="mute" aria-label="Mute"><span aria-hidden="true"></span></button><button class="player__btn player__fs" data-player-action="fullscreen" aria-label="Fullscreen"><span aria-hidden="true"></span></button></div></div>
+        </article>
+
+        <article class="film-entry" data-timeline-item id="aug-18-24">
+          <header class="film-meta"><time datetime="2024-08-18">18 AUG 2024</time><h2 class="title">BooMasala</h2><p>006 / 007</p></header>
+          <div class="content player" data-player data-player-id="aug-18-24" tabindex="0"><video class="player__video" preload="metadata" playsinline><source src="Aug18-24.mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="player__fallback" aria-hidden="true"><span>BOOMASALA</span><small>18 AUG 2024</small></div><button class="player__big-play" data-player-action="toggle" aria-label="Play BooMasala"><span class="play-triangle" aria-hidden="true"></span><span>Play film</span></button><div class="player__chrome" data-player-chrome hidden><button class="player__btn player__play" data-player-action="toggle" aria-label="Play or pause"><span aria-hidden="true"></span></button><div class="player__time"><span data-player-time="current">0:00</span><span class="player__time-sep"> / </span><span data-player-time="duration">0:00</span></div><div class="player__scrubber" role="slider" data-player-scrubber tabindex="0" aria-label="Seek BooMasala" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player__scrubber-buffer" data-player-buffer></div><div class="player__scrubber-fill" data-player-fill></div><div class="player__scrubber-thumb" data-player-thumb></div><span class="player__tooltip" data-player-tooltip hidden>0:00</span></div><button class="player__btn player__mute" data-player-action="mute" aria-label="Mute"><span aria-hidden="true"></span></button><button class="player__btn player__fs" data-player-action="fullscreen" aria-label="Fullscreen"><span aria-hidden="true"></span></button></div></div>
+        </article>
+
+        <article class="film-entry" data-timeline-item id="railer-1">
+          <header class="film-meta"><time datetime="2024-09-02">02 SEP 2024</time><h2 class="title">Fart of the Century <em>Trailer</em></h2><p>007 / 007</p></header>
+          <div class="content player" data-player data-player-id="railer-1" tabindex="0"><video class="player__video" preload="metadata" playsinline><source src="railer (1).mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="player__fallback" aria-hidden="true"><span>FART OF THE CENTURY</span><small>02 SEP 2024</small></div><button class="player__big-play" data-player-action="toggle" aria-label="Play Fart of the Century Trailer"><span class="play-triangle" aria-hidden="true"></span><span>Play film</span></button><div class="player__chrome" data-player-chrome hidden><button class="player__btn player__play" data-player-action="toggle" aria-label="Play or pause"><span aria-hidden="true"></span></button><div class="player__time"><span data-player-time="current">0:00</span><span class="player__time-sep"> / </span><span data-player-time="duration">0:00</span></div><div class="player__scrubber" role="slider" data-player-scrubber tabindex="0" aria-label="Seek Fart of the Century Trailer" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="player__scrubber-buffer" data-player-buffer></div><div class="player__scrubber-fill" data-player-fill></div><div class="player__scrubber-thumb" data-player-thumb></div><span class="player__tooltip" data-player-tooltip hidden>0:00</span></div><button class="player__btn player__mute" data-player-action="mute" aria-label="Mute"><span aria-hidden="true"></span></button><button class="player__btn player__fs" data-player-action="fullscreen" aria-label="Fullscreen"><span aria-hidden="true"></span></button></div></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>Augmentation Films</p><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
