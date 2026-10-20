@@ -160,7 +160,7 @@ main { max-width: 1600px; margin: 0 auto; }
   .intro { padding-inline: 20px; }
   .film-list { padding-inline: 20px; }
   .intro h1 { font-size: clamp(60px, 20vw, 96px); }
-  .film-meta h2 { font-size: clamp(42px, 13vw, 64px); }
+  .film-meta h2 { max-width: 100%; font-size: clamp(36px, 9.5vw, 48px); letter-spacing: -.04em; overflow-wrap: anywhere; }
   .player { min-height: 200px; }
   .player__chrome { grid-template-columns: 40px minmax(68px, auto) 1fr 40px 40px; gap: 3px; padding: 5px; }
   .player__time { font-size: 10px; }
