@@ -59,7 +59,10 @@
             this.items.forEach((item) => {
                 const id = item.id;
                 const titleEl = item.querySelector('.title');
-                const label = titleEl ? titleEl.textContent.trim() : id;
+                const timeEl = item.querySelector('time');
+                const title = titleEl ? titleEl.textContent.trim() : id;
+                const date = timeEl ? timeEl.textContent.trim() : '';
+                const label = date ? date + ' — ' + title : title;
 
                 const marker = document.createElement('button');
                 marker.type = 'button';
@@ -212,7 +215,13 @@
                 return;
             }
             const pct = Math.min(Math.max(currentTime / duration, 0), 1);
-            this.fill.style.height = (pct * 100) + '%';
+            if (window.matchMedia('(max-width: 820px)').matches) {
+                this.fill.style.width = (pct * 100) + '%';
+                this.fill.style.height = '2px';
+            } else {
+                this.fill.style.height = (pct * 100) + '%';
+                this.fill.style.width = '2px';
+            }
         }
     }
 
